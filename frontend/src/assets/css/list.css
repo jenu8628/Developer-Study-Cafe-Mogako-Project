@@ -1,0 +1,170 @@
+.FreeStudyList-container {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-bottom: 10vh;
+  min-height: 100vh;
+  /* background: rgb(236, 235, 235); */
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png");
+  background-repeat: repeat
+  /* background-size: cover; */
+}
+.FreeStudyList-container .FreeStudyList-title{
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 3em;
+}
+.FreeStudyList-container .FreeStudyList-title .FreeStudyList-create{
+  position: absolute;
+  right: 5%;
+}
+.FreeStudyList-container .FreeStudyList-title .FreeStudyList-change{
+  margin-left: 70%;
+}
+
+
+.FreeStudyList-container .cursor:hover{
+  cursor: pointer;
+}
+
+.FreeStudyList-container .FreeStudyList-box {
+  margin-top: 5vh;
+  width: 80%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+  grid-template-rows: repeat(auto-fill, minmax(300px, auto));
+  grid-gap: 60px;
+}
+.FreeStudyList-container .FreeStudyList-box .FreeStudyList-list{
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px rgb(158, 156, 156);
+  background: white;
+  height: 350px;
+  width: 230px;
+  transition: ease 1s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.FreeStudyList-container .FreeStudyList-box .FreeStudyList-list:hover{
+  transform: scale(1.1) ;
+  cursor: pointer;
+}
+.FreeStudyList-container .FreeStudyList-list .list-front{
+  transition: ease 1s;
+  backface-visibility:hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.FreeStudyList-container .FreeStudyList-list:hover .list-front{
+  transition: ease 1s;
+}
+.FreeStudyList-container .list-front .img-box{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-bottom: 70px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 0px 0px 5px rgba(161, 161, 161, 0.644);
+}
+.FreeStudyList-container .list-front .list-content{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  /* background: rgba(253, 224, 224, 0.315); */
+  /* background: #e8f1ffbe; */
+  background: #dbe9ffe5;
+  border-radius: 0 0 10px 10px;
+}
+.FreeStudyList-container .list-front .list-content .list-content-margin {
+  margin-top: 60px;
+}
+
+.FreeStudyList-container .FreeStudyList-box .list-content{
+  margin-top: 5%;
+}
+
+.FreeStudyList-container .study-modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .7);
+  backdrop-filter: saturate(180%) blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.FreeStudyList-container .study-modal-container .study-modal{
+  border-radius: 5px;
+  width: 50%;
+  height: 60%;
+  background: #ebf5f5;
+  position: relative;
+  font-weight: bold;
+}
+.FreeStudyList-container .study-modal-container .study-modal > div:not(.modal-btngroup){
+  padding: 0 7%;
+}
+
+.FreeStudyList-container .modal-title {
+  margin-top: 10%;
+}
+.FreeStudyList-container .modal-margin {
+  margin-top: 2.5%;
+}
+.FreeStudyList-container .modal-btngroup {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.FreeStudyList-container .modal-btn {
+  /* border: black 1px solid; */
+  width: 5rem;
+  height: 2rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease 0.5s;
+  background: rgb(212, 216, 215);
+  font-weight: bold;
+}
+.FreeStudyList-container .modal-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 5px 5px rgba(128, 128, 128, 0.514);
+}
+
+.loading {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,38 @@
+version: "3"
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    volumes: 
+      - ./frontend:/frontend
+    ports: 
+      - "3000:3000"
+
+  backend:
+    build: ./backend
+    command: gunicorn -w 4 mysite.wsgi -b 0.0.0.0:8000
+    volumes: 
+        - ./backend:/backend
+    ports: 
+        - "8000:8000"
+
+  nginx:
+    build: ./nginx
+    depends_on:
+    - backend
+    command: nginx -g 'daemon off;'
+    ports:
+    - "7799:7799"
+    - "443:443"
+    volumes:
+    - ./backend/static:/var/www/static
+    - ./backend/media:/var/www/media
+
+  # certbot:
+  #   image: certbot/certbot
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./data/certbot/conf:/etc/letsencrypt
+  #     - ./data/certbot/www:/var/www/certbot
+  #   entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 5d & wait $${!}; done;'"
